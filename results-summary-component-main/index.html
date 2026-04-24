@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+   <!-- Font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <style>
+    body {
+      margin: 0;
+    }
+    
+    html {
+      font-family: 'Hanken Grotesk', sans-serif;
+      background: #f5f7ff;
+    }
+    .surface-elevated {
+      max-width: 90%;
+      height: 90dvh;
+      background-color: hsl(221, 100%, 96%);
+      margin: 2rem auto;
+      box-shadow: -1px 15px 18px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .result-card {
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 1rem;
+      max-width:350px;
+      box-shadow: -1px 15px 18px hsl(241, 81%, 54%, 0.15);
+      margin: auto;
+
+      display: flex;
+      flex-direction: row;
+    }
+
+    .result-highlight {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      border-radius: 1rem;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 1.3rem;
+    }
+
+    .result-highlight h3 {
+      color: hsl(241, 100%, 89%);
+      font-size: 0.6875rem;
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .result-highlight-numbers {
+      background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      height: 100px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .result-highlight-numbers h1 {
+      margin: 0;
+      color: white;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0 auto;
+      color: hsl(241, 100%, 89%);
+      font-size: 0.61rem;
+      font-weight: 500;
+    }
+
+    .result-highlight h2 {
+      margin: 8px;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .result-highlight p {
+      max-width: calc(100% - 2rem);
+      text-align: center;
+      }
+
+    .result-summary {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+    
+    }
+
+    .result-summary h3 {
+      margin: 0;      
+      width: 80%;
+      font-size: 0.6875rem;
+      text-align: left;
+    }
+
+    .summary-lines {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      padding: 7px 0;
+      border-radius: 8px;
+    }
+
+    .summary-line img {
+      max-width: 0.6875rem;
+    }
+    
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 4px;
+      margin-left: 6px;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      gap: 4px;
+      margin-right: 6px;
+    }
+
+    .red {
+      background-color: hsl(0, 100%, 67%, 0.1);
+    }
+
+    .yellow {
+      background-color: hsl(39, 100%, 56%, 0.1);
+    }
+
+    .green {
+      background-color: hsl(166, 100%, 37%, 0.1);
+    }
+
+    .blue {
+      background-color: hsl(234, 85%, 45%, 0.1);
+    }
+
+    .button {
+      color: white;
+      background-color: hsl(224, 30%, 27%);
+      width: 80%;
+      text-align: center;
+      font-size: 0.6rem;
+      font-weight: 500;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      border-radius: 1rem;
+      margin: 6px;
+      
+      transition: background;
+    }
+
+    .button:hover {
+      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    }
+
+    @media (max-width: 420px) {
+      .surface-elevated {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+        height: auto;
+      }
+
+      .result-card {
+        flex-direction: column;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        margin: 0;
+        box-shadow: none; 
+      }
+
+      .result-highlight {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        width: 100%;
+      }
+
+      .result-summary {
+        margin: 1rem 0;
+        padding: 0;
+      }
+
+      .result-summary h3 {
+        width: 90%;
+      }
+
+      .summary-line {
+        width: 90%;
+      }
+
+      .button {
+        width: 90%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <main class="surface-elevated">
+
+    <section class="result-card">
+      <div class="result-highlight">
+        <h3>Your Result</h3>
+        <div class="result-highlight-numbers">
+          <h1>76</h1>
+          <p>of 100</p>
+        </div>
+        <h2>Great</h2>
+        <p>You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+
+      <div class="result-summary">
+        <h3>Summary</h3>
+
+        <div class="summary-lines">
+          <div class="summary-line red">
+            <div class="left">
+              <img src="assets/images/icon-reaction.svg" alt="Picture not found">
+              <p style="color: hsl(0, 100%, 67%); font-weight: 700;">Reaction</p>
+            </div>
+            <div class="right">
+              <p style="color: hsl(224, 30%, 27%); font-weight: 700;">80</p>
+              <p>/ 100</p>
+            </div>
+          </div>
+
+          <div class="summary-line yellow">
+            <div class="left">
+              <img src="assets/images/icon-memory.svg" alt="Picture not found">
+              <p style="color: hsl(39, 100%, 56%); font-weight: 700;">Memory</p>
+            </div>
+            <div class="right">
+              <p style="color: hsl(224, 30%, 27%); font-weight: 700;">92</p>
+              <p>/ 100</p>
+            </div>
+          </div>
+
+          <div class="summary-line green">
+            <div class="left">
+              <img src="assets/images/icon-verbal.svg" alt="Picture not found">
+              <p style="color: hsl(166, 100%, 37%); font-weight: 700;">Verbal</p>
+            </div>
+            <div class="right">
+              <p style="color: hsl(224, 30%, 27%); font-weight: 700;">61</p>
+              <p>/ 100</p>
+            </div>
+          </div>
+
+          <div class="summary-line blue">
+            <div class="left">
+              <img src="assets/images/icon-visual.svg" alt="Picture not found">
+              <p style="color: hsl(234, 85%, 45%); font-weight: 700;">Visual</p>
+            </div>
+            <div class="right">
+              <p style="color: hsl(224, 30%, 27%); font-weight: 700;">73</p>
+              <p>/ 100</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="button">Continue</div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Zoltán Szabó</a>.
+  </footer>
+</body>
+</html>
