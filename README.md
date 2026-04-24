@@ -6,7 +6,7 @@ This is a solution to the Frontend Mentor challenge.
 
 ## Screenshot
 
-![Results summary component](./screenshot.png)
+![Results summary component](./screenshot.fw.png)
 
 ## Links
 
